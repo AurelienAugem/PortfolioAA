@@ -18,4 +18,10 @@ function portfolio_script(){
 }
 add_action('wp_enqueue_scripts', 'portfolio_script');
 
+//Enregistrement du menu personnalisé
+function portfolio_register_menu(){
+    register_nav_menu('menu-header',__('Menu d\'entête'));
+}
+add_action('init','portfolio_register_menu');
+
 ?>
