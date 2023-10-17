@@ -25,18 +25,18 @@ $noir: #1D1D1D;
 
 @keyframes hover-link {
     0%{
-        font-size: medium;
+        font-size: 1.4em;
     }
     100%{
-        font-size: large;
+        font-size: 1.8em;
     }
 }
 @keyframes link {
     0%{
-        font-size: large;
+        font-size: 1.8em;
     }
     100%{
-        font-size: medium;
+        font-size: 1.4em;
     }
 }
 
@@ -48,8 +48,8 @@ body{
         display: flex;
         flex-direction: row;
         width: 100%;
-        height: 50px;
-        background: linear-gradient($bleu-neon,20%,$noir);
+        height: 70px;
+        background: linear-gradient($bleu-neon,5%,$noir);
         justify-content: flex-end;
         .menu{
             ul{
@@ -57,15 +57,15 @@ body{
                 flex-direction: row;
                 list-style-type: none;
                 li{
-                    margin-right: 1em;
+                    margin-right: 3em;
                     width: 100px;
                     a{
                         text-decoration: none;
                         font-family: 'latoregular';
-                        font-size: medium;
+                        font-size: 1.4em;
                         color: aliceblue;
                         text-transform: uppercase;
-                        transition: font-size 200ms;
+                        transition: font-size 200ms ease-in-out;
                         &:hover{
                             animation: hover-link 500ms;
                             animation-fill-mode: forwards;
@@ -80,13 +80,98 @@ body{
     }
     /****************** Style des éléments du contenu *********************/
     main{
+        display: flex;
+        flex-direction: column;
         width: 100%;
         background-color: $noir;
+        align-items: center;
+        h1{
+            margin: 0;
+            padding: 2em 0;
+            font-size: 2.5em;
+            font-family: 'robotomedium';
+            text-transform: uppercase;
+            text-shadow: $bleu-neon 0 0 25px;
+            color: $bleu-neon;
+        }
+        h2{
+            font-size: 2em;
+            font-family: 'robotomedium';
+            text-transform: uppercase;
+            color: $bleu-neon;
+        }
+        .separation{
+            margin: 3em 0;
+            height: 2px;
+            width: 90%;
+            background-color: $bleu-neon;
+            border-radius: 1px;
+            box-shadow: 0 0 15px $bleu-neon;
+        }
+        //Formulaire de contact
+        .wpcf7{
+            width: 100%;
+            .wpcf7-form{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .form-label{
+                    color: $bleu-neon;
+                    font-size: medium;
+                    font-family: 'robotoregular';
+                    text-transform: uppercase;
+                    span{
+                        input{
+                            margin-top: 1em;
+                            height: 35px;
+                            border-radius: 10px;
+                            background-color: aliceblue;
+                            color: $noir;
+                            font-size: medium;
+                        }
+                        textarea{
+                            width: 365px;
+                            height: 195px;
+                            margin-top: 1em;
+                            border-radius: 10px;
+                            background-color: aliceblue;
+                            color: $noir;
+                            font-size: medium;
+                            resize: none;
+                        }
+                    }
+                }
+                .form-submit{
+                    height: 50px;
+                    width: 200px;
+                    background-color: $bleu-neon;
+                    border-radius: 5px;
+                    border-color: $bleu-neon;
+                    box-shadow: 0 0 10px $bleu-neon;
+                    text-transform: uppercase;
+                    transition: all 400ms ease-in-out;
+                    &:hover{
+                        background-color:aliceblue;
+                        box-shadow: 0 0 10px aliceblue;
+                        border-color: aliceblue;
+                        cursor: pointer;
+                    }
+                }
+                .wpcf7-spinner{
+                    display: none;
+                }
+                .wpcf7-response-output{
+                    color: aliceblue;
+                    font-family: 'robotoregular';
+                }
+            }    
+        }
+        
     }
     /****************** Style des éléments du pied-de-page *********************/
     footer{
         width: 100%;
         height: 50px;
-        background: linear-gradient($noir,80%,$bleu-neon);
+        background: linear-gradient($noir,70%,$bleu-neon);
     }
 }
