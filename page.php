@@ -1,12 +1,7 @@
 <?php get_header()?>
 <main>
-    <div class="deep-background">
-        <div class="glass-mask"></div>  
-        <span class="sp1"></span>
-        <span class="sp2"></span>
-        <span class="sp3"></span> 
-    </div>
-    <?php    
+    <?php get_template_part('templates/background'); 
+        
         if (have_posts()):
             while (have_posts()) : the_post();
     ?>

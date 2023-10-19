@@ -118,7 +118,6 @@ body{
             align-items: center;
         }
         .deep-background{
-            height: 100vh;
             width: 100vw;
             position: absolute;
             z-index: -1;
@@ -139,24 +138,26 @@ body{
             }
             .sp1{
                 height: 2px;
-                width: 80%;
+                width: 70%;
                 transform: rotate(80deg);
                 border-radius: 1px;
                 background-color: $bleu-neon;
                 box-shadow: 0 0 15px $bleu-neon;
-                margin: 5em -10em;
                 position: fixed;
+                top: 20em;
+                left: -8em;
                 z-index: -1;
             }
             .sp2{
                 height: 2px;
-                width: 80%;
+                width: 50%;
                 transform: rotate(-68deg);
                 border-radius: 1px;
                 background-color: $bleu-neon;
                 box-shadow: 0 0 15px $bleu-neon;
-                margin: 25em 25em;
                 position: fixed;
+                top: 24em;
+                right: 0;
                 z-index: -1;
             }
             .sp3{
@@ -166,8 +167,9 @@ body{
                 border: solid 2px $bleu-neon;
                 border-radius: 25px;
                 box-shadow: 0 0 15px $bleu-neon;
-                margin: 15em 6em;
                 position: fixed;
+                top: 20em;
+                left: 6em;
                 z-index: -1;
             }  
         }
@@ -178,16 +180,21 @@ body{
             flex-wrap: wrap;
             justify-content: space-around;
             width: 80%;
-            .project-card{
+            .card{
                 display: flex;
-                align-self: center;
-                height: 12em;
-                width: 25em;
-                box-sizing: border-box;
-                border: solid 3px $bleu-neon;
-                box-shadow: 0 0 15px $bleu-neon;
-                border-radius: 10px;
-                overflow: hidden;
+                flex-direction: column;
+                .project-card{
+                    display: flex;
+                    align-self: center;
+                    height: 12em;
+                    width: 25em;
+                    box-sizing: border-box;
+                    border: solid 3px $bleu-neon;
+                    box-shadow: 0 0 15px $bleu-neon;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    margin-bottom: 10px;
+                }
             }
         }
         //Formulaire de contact
