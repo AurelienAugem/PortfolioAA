@@ -49,4 +49,36 @@ function portfolio_array_taxo($args){
     }return $arrayTaxonomies;
 }
 
+//Affichage des technologie utilisés dans le projet
+function portfolio_show_tech($args) {
+    for ($i = 0; $i < count($args); $i++) {
+        if ($args[$i]->slug == "html") {
+            echo '<div class="block-info">';
+            echo wp_get_attachment_image(51);
+            echo '<span class="infobulle">' . get_post_meta(51, '_wp_attachment_image_alt', true) . '</span>';
+            echo '</div>';
+        } elseif ($args[$i]->slug == "css") {
+            echo '<div class="block-info">';
+            echo wp_get_attachment_image(50);
+            echo '<span class="infobulle">' . get_post_meta(50, '_wp_attachment_image_alt', true) . '</span>';
+            echo '</div>';
+        } elseif ($args[$i]->slug == "javascript") {
+            echo '<div class="block-info">';
+            echo wp_get_attachment_image(52);
+            echo '<span class="infobulle">' . get_post_meta(52, '_wp_attachment_image_alt', true) . '</span>';
+            echo '</div>';
+        } elseif ($args[$i]->slug == "php") {
+            echo '<div class="block-info">';
+            echo wp_get_attachment_image(53);
+            echo '<span class="infobulle">' . get_post_meta(53, '_wp_attachment_image_alt', true) . '</span>';
+            echo '</div>';
+        } elseif ($args[$i]->slug == "wordpress") {
+            echo '<div class="block-info">';
+            echo wp_get_attachment_image(54);
+            echo '<span class="infobulle">' . get_post_meta(54, '_wp_attachment_image_alt', true) . '</span>';
+            echo '</div>';
+        }
+    }
+}
+
 ?>

@@ -13,6 +13,31 @@
         endif;
     ?>
     <?php if(is_front_page()): ?>
+        <section class="skills">
+            <figure class="show-skills">
+                <div class="skills-block">
+                    <label class="skills-label"></label>
+                    <progress class="skills-progress"></progress>
+                </div>
+                <div class="skills-block">
+                    <label class="skills-label"></label>
+                    <progress class="skills-progress"></progress>
+                </div>
+                <div class="skills-block">
+                    <label class="skills-label"></label>
+                    <progress class="skills-progress"></progress>
+                </div>
+                <div class="skills-block">
+                    <label class="skills-label"></label>
+                    <progress class="skills-progress"></progress>
+                </div>
+                <div class="skills-block">
+                    <label class="skills-label"></label>
+                    <progress class="skills-progress"></progress>
+                </div>
+            </figure>
+        </section>
+        <span class="separation"></span>
         <section class="project-gallery">
             <?php 
                 $args = array(

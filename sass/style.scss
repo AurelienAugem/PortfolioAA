@@ -142,6 +142,7 @@ body{
         }
         p{
             font-family: 'latoregular';
+            color: aliceblue;
         }
         .separation{
             margin: 3em 0;
@@ -156,7 +157,12 @@ body{
             flex-direction: column;
             width: 100%;
             background-color: transparent;
-            align-items: center;
+            h1{
+                align-self: center;
+            }
+            p{
+                padding: 0 5em;
+            }
         }
         .deep-background{
             width: 100vw;
@@ -361,14 +367,42 @@ body{
                 .techno{
                     display: flex;
                     flex-direction: row;
-                    width: 50%;
-                    img{
-                        height: 50px;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    .block-info{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        margin: 0 1.875em;
+                        img{
+                            height: 50px;
+                            width: 50px;
+                        }
+                        .infobulle{
+                            position: absolute;
+                            margin-top: 3.5em;
+                            background-color: $noir;
+                            color: $bleu-neon;
+                            padding: 3px;
+                            font-family: 'latoregular';
+                            border-radius: 5px;
+                            border: solid 1px $bleu-neon;
+                            box-shadow: 0 0 10px $bleu-neon;
+                            transition: all 250ms ease-in-out;
+                            transform: scale(0);
+                            opacity: 0;
+                        }
+                    }
+                    &:hover{
+                        .infobulle{
+                            transform: scale(1);
+                            opacity: 1;
+                        }
                     }
                 }
                 .post-type{
                     display: flex;
-                    margin-top: 20px;
+                    margin-top: 30px;
                     p{
                         font-size: 20px;
                         color: aliceblue;

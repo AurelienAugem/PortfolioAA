@@ -131,6 +131,7 @@ body main h3 {
 }
 body main p {
   font-family: "latoregular";
+  color: aliceblue;
 }
 body main .separation {
   margin: 3em 0;
@@ -145,7 +146,12 @@ body main .pf-page-content {
   flex-direction: column;
   width: 100%;
   background-color: transparent;
-  align-items: center;
+}
+body main .pf-page-content h1 {
+  align-self: center;
+}
+body main .pf-page-content p {
+  padding: 0 5em;
 }
 body main .deep-background {
   width: 100vw;
@@ -344,14 +350,40 @@ body main .post .post-content .post-image .wp-block-image img {
 body main .post .post-content .techno {
   display: flex;
   flex-direction: row;
-  width: 50%;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-body main .post .post-content .techno img {
+body main .post .post-content .techno .block-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 1.875em;
+}
+body main .post .post-content .techno .block-info img {
   height: 50px;
+  width: 50px;
+}
+body main .post .post-content .techno .block-info .infobulle {
+  position: absolute;
+  margin-top: 3.5em;
+  background-color: #1D1D1D;
+  color: #2272FF;
+  padding: 3px;
+  font-family: "latoregular";
+  border-radius: 5px;
+  border: solid 1px #2272FF;
+  box-shadow: 0 0 10px #2272FF;
+  transition: all 250ms ease-in-out;
+  transform: scale(0);
+  opacity: 0;
+}
+body main .post .post-content .techno:hover .infobulle {
+  transform: scale(1);
+  opacity: 1;
 }
 body main .post .post-content .post-type {
   display: flex;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 body main .post .post-content .post-type p {
   font-size: 20px;
