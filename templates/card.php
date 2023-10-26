@@ -1,14 +1,15 @@
 <div class="card">
     <div class="project-card">
-        <a href="<?php echo get_permalink();?>">
             <?php the_content();?>
-        </a>
     </div>
     <div class="list-tech">
 
     </div>
+    <div class="overlay">
+        <a href="<?php echo get_permalink();?>">
+            <h3 class="overlay-title"><?php the_title(); ?></h3>
+        </a>
+    </div>
 </div>
-<div class="lightbox">
 
-</div>
     

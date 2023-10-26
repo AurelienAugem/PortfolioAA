@@ -5,6 +5,7 @@ Author: Aurélien Augem
 Description: Feuille de style du thème PortfolioAA
 Version: 1.0
 */
+/*********************************** Import des polices **************************************/
 @font-face {
   font-family: "latoregular";
   src: url("./assets/fonts/lato-regular.woff2") format("woff2");
@@ -17,6 +18,8 @@ Version: 1.0
   font-family: "robotomedium";
   src: url("./assets/fonts/roboto-medium.woff2") format("woff2");
 }
+/********************* Variables **************************/
+/****************************** Animations ********************************/
 @keyframes hover-link {
   0% {
     font-size: 1.4em;
@@ -33,6 +36,29 @@ Version: 1.0
     font-size: 1.4em;
   }
 }
+@keyframes rotation-sp1 {
+  0% {
+    transform: rotate(80deg);
+  }
+  50% {
+    transform: rotate(85deg);
+  }
+  100% {
+    transform: rotate(80deg);
+  }
+}
+@keyframes rotation-sp2 {
+  0% {
+    transform: rotate(-68deg);
+  }
+  50% {
+    transform: rotate(-76deg);
+  }
+  100% {
+    transform: rotate(-68deg);
+  }
+}
+/***************************************** Styles **************************************/
 body {
   margin: 0;
   height: 100%;
@@ -96,6 +122,16 @@ body main h2 {
   text-shadow: #2272FF 0 0 25px;
   color: #2272FF;
 }
+body main h3 {
+  font-size: 1.3em;
+  font-family: "robotomedium";
+  text-transform: uppercase;
+  color: aliceblue;
+  -webkit-text-stroke: 1px black;
+}
+body main p {
+  font-family: "latoregular";
+}
 body main .separation {
   margin: 3em 0;
   height: 2px;
@@ -142,6 +178,7 @@ body main .deep-background .sp1 {
   top: 20em;
   left: -8em;
   z-index: -1;
+  animation: rotation-sp1 7s infinite;
 }
 body main .deep-background .sp2 {
   height: 2px;
@@ -154,6 +191,7 @@ body main .deep-background .sp2 {
   top: 24em;
   right: 0;
   z-index: -1;
+  animation: rotation-sp2 10s infinite;
 }
 body main .deep-background .sp3 {
   height: 50px;
@@ -189,6 +227,36 @@ body main .project-gallery .card .project-card {
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 10px;
+}
+body main .project-gallery .card .list-tech {
+  display: flex;
+  flex-direction: row;
+}
+body main .project-gallery .card .overlay {
+  position: absolute;
+  height: 12em;
+  width: 25em;
+  border-radius: 10px;
+  background: rgba(76, 165, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px);
+  opacity: 0;
+  transition: opacity 500ms;
+}
+body main .project-gallery .card .overlay:hover {
+  opacity: 1;
+}
+body main .project-gallery .card .overlay:not(:hover) {
+  opacity: 0;
+}
+body main .project-gallery .card .overlay a {
+  display: flex;
+  position: absolute;
+  height: 12em;
+  width: 25em;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 }
 body main .wpcf7 {
   width: 100%;
@@ -245,10 +313,76 @@ body main .wpcf7 .wpcf7-form .wpcf7-response-output {
   color: aliceblue;
   font-family: "robotoregular";
 }
+body main .post .post-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+body main .post .post-content .post-title {
+  display: flex;
+  justify-content: center;
+}
+body main .post .post-content .post-title h2 {
+  font-size: 4vw;
+  -webkit-text-stroke: 0.2px aliceblue;
+  text-shadow: aliceblue 0 0 25px;
+}
+body main .post .post-content .post-image {
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+body main .post .post-content .post-image .wp-block-image {
+  display: flex;
+  justify-content: center;
+}
+body main .post .post-content .post-image .wp-block-image img {
+  max-width: 75%;
+  border-radius: 20px;
+}
+body main .post .post-content .techno {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+body main .post .post-content .techno img {
+  height: 50px;
+}
+body main .post .post-content .post-type {
+  display: flex;
+  margin-top: 20px;
+}
+body main .post .post-content .post-type p {
+  font-size: 20px;
+  color: aliceblue;
+}
+body main .post .post-content .post-description {
+  display: flex;
+  justify-content: center;
+  width: 75%;
+  border: solid 1px #2272FF;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+body main .post .post-content .post-description p {
+  font-size: 20px;
+  color: aliceblue;
+  margin: 10px;
+}
+body main .post .post-content .git-link {
+  margin-top: 40px;
+}
+body main .post .post-content .git-link a {
+  font-family: "latoregular";
+  text-decoration: none;
+  color: #2272FF;
+}
 body footer {
   width: 100%;
   height: 90px;
   background: linear-gradient(#1D1D1D, 70%, #2272FF);
+  opacity: 0.5;
 }
 
 /*# sourceMappingURL=style.css.map */

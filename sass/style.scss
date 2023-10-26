@@ -5,6 +5,8 @@ Description: Feuille de style du thème PortfolioAA
 Version: 1.0
 */
 
+/*********************************** Import des polices **************************************/
+
 @font-face {
     font-family: 'latoregular';
     src: url('./assets/fonts/lato-regular.woff2') format('woff2');
@@ -20,9 +22,13 @@ Version: 1.0
     src: url('./assets/fonts/roboto-medium.woff2') format('woff2');
 }
 
+/********************* Variables **************************/
+
 $bleu-neon: #2272FF;
 $noir: #1D1D1D; 
 
+/****************************** Animations ********************************/
+//Liens 
 @keyframes hover-link {
     0%{
         font-size: 1.4em;
@@ -39,6 +45,31 @@ $noir: #1D1D1D;
         font-size: 1.4em;
     }
 }
+//Background
+@keyframes rotation-sp1 {
+    0%{
+        transform: rotate(80deg);
+    }
+    50%{
+        transform: rotate(85deg);
+    }
+    100%{
+        transform: rotate(80deg);
+    }
+}
+@keyframes rotation-sp2 {
+    0%{
+        transform: rotate(-68deg);
+    }
+    50%{
+        transform: rotate(-76deg);
+    }
+    100%{
+        transform: rotate(-68deg);
+    }
+}
+
+/***************************************** Styles **************************************/
 
 body{
     margin: 0;
@@ -102,6 +133,16 @@ body{
             text-shadow: $bleu-neon 0 0 25px;
             color: $bleu-neon;
         }
+        h3{
+            font-size: 1.3em;
+            font-family: 'robotomedium';
+            text-transform: uppercase;
+            color: aliceblue;
+            -webkit-text-stroke: 1px black;
+        }
+        p{
+            font-family: 'latoregular';
+        }
         .separation{
             margin: 3em 0;
             height: 2px;
@@ -147,6 +188,7 @@ body{
                 top: 20em;
                 left: -8em;
                 z-index: -1;
+                animation: rotation-sp1 7s infinite;
             }
             .sp2{
                 height: 2px;
@@ -159,6 +201,7 @@ body{
                 top: 24em;
                 right: 0;
                 z-index: -1;
+                animation: rotation-sp2 10s infinite;
             }
             .sp3{
                 height: 50px;
@@ -194,6 +237,37 @@ body{
                     border-radius: 10px;
                     overflow: hidden;
                     margin-bottom: 10px;
+                }
+                .list-tech{
+                    display: flex;
+                    flex-direction: row;
+                }
+                .overlay{
+                    position: absolute;
+                    height: 12em;
+                    width: 25em;
+                    border-radius: 10px;
+                    background: rgba(76, 165, 255, 0.2);
+                    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                    backdrop-filter: blur(1px);
+                    opacity: 0;
+                    transition: opacity 500ms;
+                    &:hover{
+                        opacity: 1;
+                        
+                    }
+                    &:not(:hover){
+                        opacity: 0;
+                    }
+                    a{
+                        display: flex;
+                        position: absolute;
+                        height: 12em;
+                        width: 25em;
+                        justify-content: center;
+                        align-items: center;
+                        text-decoration: none;
+                    }
                 }
             }
         }
@@ -255,12 +329,80 @@ body{
                 }
             }    
         }
-        
+        //Affichage des projets
+        .post{
+            .post-content{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+                .post-title{
+                    display: flex;
+                    justify-content: center;
+                    h2{
+                        font-size: 4vw;
+                        -webkit-text-stroke: 0.2px aliceblue;
+                        text-shadow: aliceblue 0 0 25px;
+                    } 
+                }
+                .post-image{
+                    margin-top: 20px;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    .wp-block-image{
+                        display: flex;
+                        justify-content: center;
+                        img{
+                            max-width: 75%;
+                            border-radius: 20px;
+                        }
+                    }
+                }
+                .techno{
+                    display: flex;
+                    flex-direction: row;
+                    width: 50%;
+                    img{
+                        height: 50px;
+                    }
+                }
+                .post-type{
+                    display: flex;
+                    margin-top: 20px;
+                    p{
+                        font-size: 20px;
+                        color: aliceblue;
+                    }
+                }
+                .post-description{
+                    display: flex;
+                    justify-content: center;
+                    width: 75%;
+                    border: solid 1px $bleu-neon;
+                    border-radius: 10px;
+                    margin-top: 20px;
+                    p{
+                        font-size: 20px;
+                        color: aliceblue;
+                        margin: 10px;
+                    }
+                }
+                .git-link{
+                    margin-top: 40px;
+                    a{
+                        font-family: 'latoregular';
+                        text-decoration: none;
+                        color: $bleu-neon;
+                    }
+                }
+            }
+        }
     }
     /****************** Style des éléments du pied-de-page *********************/
     footer{
         width: 100%;
         height: 90px;
         background: linear-gradient($noir,70%,$bleu-neon);
+        opacity: 0.5;
     }
 }
