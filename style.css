@@ -211,6 +211,40 @@ body main .deep-background .sp3 {
   left: 6em;
   z-index: -1;
 }
+body main .skills {
+  height: auto;
+  width: 100%;
+}
+body main .skills .show-skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+body main .skills .show-skills .skills-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 30em;
+  margin: 0.3em;
+}
+body main .skills .show-skills .skills-block .skills-label {
+  margin: 0 1em;
+  align-self: center;
+}
+body main .skills .show-skills .skills-block .skills-progress {
+  height: 1.5em;
+  width: 20em;
+  border: solid #2272FF 1px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+body main .skills .show-skills .skills-block .skills-progress .progression {
+  position: relative;
+  height: 100%;
+  width: 0;
+  background-color: aliceblue;
+}
 body main .project-gallery {
   display: flex;
   flex-direction: row;

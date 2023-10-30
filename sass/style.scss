@@ -222,6 +222,41 @@ body{
                 z-index: -1;
             }  
         }
+        //Afichage des barres de progression
+        .skills{
+            height: auto;
+            width: 100%;
+            .show-skills{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0;
+                .skills-block{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    width: 30em;
+                    margin: 0.3em;
+                    .skills-label{
+                        margin: 0 1em;
+                        align-self: center;
+                    }
+                    .skills-progress{
+                        height: 1.5em;
+                        width: 20em;
+                        border: solid $bleu-neon 1px;
+                        border-radius: 8px;
+                        overflow: hidden;
+                        .progression{
+                            position: relative;
+                            height: 100%;
+                            width: 0;
+                            background-color: aliceblue;
+                        }
+                    }
+                }
+            }
+        }
         //Affichage de la galerie des projets
         .project-gallery{
             display: flex;
