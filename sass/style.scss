@@ -108,6 +108,9 @@ body{
                     }
                 }
             }
+        }
+        .data-link{
+            display: none;
         } 
     }
     /****************** Style des éléments du contenu *********************/
@@ -134,7 +137,7 @@ body{
             color: $bleu-neon;
         }
         h3{
-            font-size: 1.3em;
+            font-size: 1.4em;
             font-family: 'robotomedium';
             text-transform: uppercase;
             color: aliceblue;
@@ -160,8 +163,25 @@ body{
             h1{
                 align-self: center;
             }
+            h2{
+                align-self: center;
+            }
             p{
                 padding: 0 5em;
+            }
+            .name{
+                text-transform: uppercase;
+                align-self: center;
+                font-size: 1.3em;
+            }
+            .presentation{
+                width: 80%;
+                align-self: center;
+                line-height: 2;
+                font-size: 1.2em;
+            }
+            .separation{
+                align-self: center;
             }
         }
         .deep-background{
@@ -224,22 +244,33 @@ body{
         }
         //Afichage des barres de progression
         .skills{
+            display: flex;
+            flex-direction: column;
             height: auto;
-            width: 100%;
+            width: 40em;
+            margin: 2em 0;
+            .skills-title{
+                align-self: center;
+            }
             .show-skills{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 margin: 0;
+                border-radius: 20px;
+                background: linear-gradient(145deg, #1f1f1f, #1a1a1a);
+                box-shadow:  9px 9px 16px #131313,
+                            -9px -9px 16px #272727;
                 .skills-block{
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
-                    width: 30em;
+                    width: 35em;
                     margin: 0.3em;
                     .skills-label{
                         margin: 0 1em;
                         align-self: center;
+                        width: 5em;
                     }
                     .skills-progress{
                         height: 1.5em;
@@ -253,6 +284,9 @@ body{
                             width: 0;
                             background-color: aliceblue;
                         }
+                    }
+                    span{
+                        font-family: 'latoregular';
                     }
                 }
             }
@@ -473,5 +507,59 @@ body{
         height: 90px;
         background: linear-gradient($noir,70%,$bleu-neon);
         opacity: 0.5;
+    }
+}
+/****************** Responsive *********************/
+@media screen and (max-width: 780px) {
+    body{
+        header{
+            flex-direction: column;
+            .menu{
+                align-self: center;
+                ul{
+                    li{
+                        margin: 0;
+                        a{
+                            .menu-btn{
+                                border-radius: 20px;
+                                background: linear-gradient(145deg, #1f1f1f, #1a1a1a);
+                                box-shadow:  3px 3px 7px #0f0f0f,
+                                            -3px -3px 7px #2b2b2b;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        main{
+            .skills{
+                width: 20em;
+                .show-skills{
+                    
+                    .skills-block{
+                        width: 20em;
+                    }
+                }
+            }
+            .project-gallery{
+                .card{
+                    .project-card{
+                        height: 10em;
+                        width: 20em;
+                    }
+                    .overlay{
+                        height: 10em;
+                        width: 20em;
+                        a{
+                            height: 10em;
+                            width: 20em;
+                            h3{
+                                font-size: 1.2em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

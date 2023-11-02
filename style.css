@@ -99,6 +99,9 @@ body header .menu ul li a:hover {
 body header .menu ul li .link-animation {
   animation: link 500ms;
 }
+body header .data-link {
+  display: none;
+}
 body main {
   display: flex;
   flex-direction: column;
@@ -123,7 +126,7 @@ body main h2 {
   color: #2272FF;
 }
 body main h3 {
-  font-size: 1.3em;
+  font-size: 1.4em;
   font-family: "robotomedium";
   text-transform: uppercase;
   color: aliceblue;
@@ -150,8 +153,25 @@ body main .pf-page-content {
 body main .pf-page-content h1 {
   align-self: center;
 }
+body main .pf-page-content h2 {
+  align-self: center;
+}
 body main .pf-page-content p {
   padding: 0 5em;
+}
+body main .pf-page-content .name {
+  text-transform: uppercase;
+  align-self: center;
+  font-size: 1.3em;
+}
+body main .pf-page-content .presentation {
+  width: 80%;
+  align-self: center;
+  line-height: 2;
+  font-size: 1.2em;
+}
+body main .pf-page-content .separation {
+  align-self: center;
 }
 body main .deep-background {
   width: 100vw;
@@ -212,25 +232,35 @@ body main .deep-background .sp3 {
   z-index: -1;
 }
 body main .skills {
+  display: flex;
+  flex-direction: column;
   height: auto;
-  width: 100%;
+  width: 40em;
+  margin: 2em 0;
+}
+body main .skills .skills-title {
+  align-self: center;
 }
 body main .skills .show-skills {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #1f1f1f, #1a1a1a);
+  box-shadow: 9px 9px 16px #131313, -9px -9px 16px #272727;
 }
 body main .skills .show-skills .skills-block {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 30em;
+  width: 35em;
   margin: 0.3em;
 }
 body main .skills .show-skills .skills-block .skills-label {
   margin: 0 1em;
   align-self: center;
+  width: 5em;
 }
 body main .skills .show-skills .skills-block .skills-progress {
   height: 1.5em;
@@ -244,6 +274,9 @@ body main .skills .show-skills .skills-block .skills-progress .progression {
   height: 100%;
   width: 0;
   background-color: aliceblue;
+}
+body main .skills .show-skills .skills-block span {
+  font-family: "latoregular";
 }
 body main .project-gallery {
   display: flex;
@@ -449,6 +482,45 @@ body footer {
   height: 90px;
   background: linear-gradient(#1D1D1D, 70%, #2272FF);
   opacity: 0.5;
+}
+
+/****************** Responsive *********************/
+@media screen and (max-width: 780px) {
+  body header {
+    flex-direction: column;
+  }
+  body header .menu {
+    align-self: center;
+  }
+  body header .menu ul li {
+    margin: 0;
+  }
+  body header .menu ul li a .menu-btn {
+    border-radius: 20px;
+    background: linear-gradient(145deg, #1f1f1f, #1a1a1a);
+    box-shadow: 3px 3px 7px #0f0f0f, -3px -3px 7px #2b2b2b;
+  }
+  body main .skills {
+    width: 20em;
+  }
+  body main .skills .show-skills .skills-block {
+    width: 20em;
+  }
+  body main .project-gallery .card .project-card {
+    height: 10em;
+    width: 20em;
+  }
+  body main .project-gallery .card .overlay {
+    height: 10em;
+    width: 20em;
+  }
+  body main .project-gallery .card .overlay a {
+    height: 10em;
+    width: 20em;
+  }
+  body main .project-gallery .card .overlay a h3 {
+    font-size: 1.2em;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
