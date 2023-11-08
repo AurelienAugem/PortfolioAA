@@ -17,22 +17,26 @@
         <?php get_template_part('templates/skillscard') ?>
         
         <span class="separation"></span>
-        <section class="project-gallery">
-            <?php 
-                $args = array(
-                    'post_type' => 'projet',
-                    'posts_per_page' => 4, 
-                );
+        <section class="project-gallery opacity-none">
+            <h2>Projets :</h2>
+            <?php get_template_part('templates/filters'); ?>
+            <div class="gallery">
+                <?php 
+                    $args = array(
+                        'post_type' => 'projet',
+                        'posts_per_page' => 10, 
+                    );
 
-                $query = new wp_query($args);
-                if($query->have_posts()) : while($query->have_posts()) : 
-                  $query->the_post();
+                    $query = new wp_query($args);
+                    if($query->have_posts()) : while($query->have_posts()) : 
+                    $query->the_post();
 
-                  get_template_part('templates/card');
+                    get_template_part('templates/card');
 
-                endwhile; endif;
-                wp_reset_postdata();
-            ?>
+                    endwhile; endif;
+                    wp_reset_postdata();
+                ?>
+            </div>
         </section>
     <?php endif;?>    
 </main>

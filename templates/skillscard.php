@@ -1,4 +1,4 @@
-<section class="skills">
+<section class="skills opacity-none">
     <h2 class="skills-title">Compétences :</h2>
     <figure class="show-skills">
         <div class="skills-block">

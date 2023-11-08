@@ -10,13 +10,13 @@ add_action( 'shutdown', function() {
    while ( @ob_end_flush() );
 } );
 
-// Chargement de la feuille de style
+//Chargement de la feuille de style
 function portfolio_style(){
     wp_enqueue_style('style', get_stylesheet_directory_uri() . '/style.css');
 }
 add_action('wp_enqueue_scripts', 'portfolio_style');
 
-// Chargement du script principal
+//Chargement du script principal
 function portfolio_script(){
     wp_enqueue_script(
         'script',
@@ -27,6 +27,18 @@ function portfolio_script(){
     );
 }
 add_action('wp_enqueue_scripts', 'portfolio_script');
+
+//Chargement du script ajax
+function portfolio_ajax(){
+    wp_enqueue_script(
+        'ajax',
+        get_template_directory_uri() . '/scripts/ajax.js',
+        array(),
+        1.0,
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'portfolio_ajax');
 
 //Enregistrement du menu personnalisé
 function portfolio_register_menu(){
@@ -80,5 +92,40 @@ function portfolio_show_tech($args) {
         }
     }
 }
+
+//Réponse requête ajax des filtres
+function portfolio_project_filter(){
+    $type = $_POST['projectType'];
+
+    $args = array(
+        'post_type' => 'projet',
+        'posts_per_page' => 10, 
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'project_type',
+                'field' => 'slug',
+                'terms' => $type,
+            ),
+        ),
+    );
+
+    $ajaxQuery = new WP_Query($args);
+    $result = '';
+
+    if($ajaxQuery->have_posts()){ while($ajaxQuery->have_posts()) : 
+        $ajaxQuery->the_post();
+
+        $result .= get_template_part('templates/card');
+
+        endwhile; 
+    } else {
+        $result = '';
+    }
+    echo $result;
+    exit;
+}
+
+add_action('wp_ajax_portfolio_project_filter', 'portfolio_project_filter');
+add_action('wp_ajax_nopriv_portfolio_project_filter', 'portfolio_project_filter');
 
 ?>

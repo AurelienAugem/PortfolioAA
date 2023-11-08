@@ -68,6 +68,14 @@ $noir: #1D1D1D;
         transform: rotate(-68deg);
     }
 }
+@keyframes translation-section {
+    0%{
+        transform: translateX(-1000px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
 
 /***************************************** Styles **************************************/
 
@@ -137,7 +145,7 @@ body{
             color: $bleu-neon;
         }
         h3{
-            font-size: 1.4em;
+            font-size: 1.6em;
             font-family: 'robotomedium';
             text-transform: uppercase;
             color: aliceblue;
@@ -146,6 +154,13 @@ body{
         p{
             font-family: 'latoregular';
             color: aliceblue;
+        }
+        .animate-section{
+            animation: translation-section 750ms forwards;
+            opacity: 1;
+        }
+        .opacity-none{
+            opacity: 0;
         }
         .separation{
             margin: 3em 0;
@@ -184,6 +199,7 @@ body{
                 align-self: center;
             }
         }
+        //Gestion du fond de la page
         .deep-background{
             width: 100vw;
             position: absolute;
@@ -249,6 +265,7 @@ body{
             height: auto;
             width: 40em;
             margin: 2em 0;
+            transition: all 500ms ease-in;
             .skills-title{
                 align-self: center;
             }
@@ -294,10 +311,46 @@ body{
         //Affichage de la galerie des projets
         .project-gallery{
             display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            width: 80%;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            transition: all 500ms ease-in;
+            .filters{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                width: 80%;
+                margin: 2em 0;
+                .filter-button{
+                    height: 50px;
+                    width: 200px;
+                    box-sizing: border-box;
+                    background-color: $noir;
+                    color: aliceblue;
+                    border-color: $noir;
+                    border-radius: 25px;
+                    text-transform: uppercase;
+                    font-size: 1.3em;
+                    -webkit-text-stroke: 1px $bleu-neon;
+                    text-shadow: $bleu-neon 0 0 25px;
+                    background: linear-gradient(145deg, #1f1f1f, #1a1a1a);
+                    box-shadow:  4px 4px 8px #131313,
+                                -4px -4px 8px #272727;
+                    cursor: pointer;
+                    &:hover{
+                        box-shadow: inset 9px 9px 18px #191919,
+                                    inset -9px -9px 18px #212121;
+                    }
+                }
+            }
+            .gallery{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                margin-top: 1em;
+                width: 80%;
+            }
             .card{
                 display: flex;
                 flex-direction: column;
@@ -514,13 +567,17 @@ body{
     body{
         header{
             flex-direction: column;
+            background: $noir;
             .menu{
                 align-self: center;
                 ul{
+                    margin: 0;
                     li{
                         margin: 0;
                         a{
                             .menu-btn{
+                                height: 60px;
+                                width: 60px;
                                 border-radius: 20px;
                                 background: linear-gradient(145deg, #1f1f1f, #1a1a1a);
                                 box-shadow:  3px 3px 7px #0f0f0f,
@@ -532,16 +589,36 @@ body{
             }
         }
         main{
+            .pf-page-content{
+                align-items: center;
+                h1{
+                    width: 80%;
+                    padding: 2.5em 5em;
+                    font-size: 2em;
+                    justify-content: center;
+                }
+            }
             .skills{
                 width: 20em;
                 .show-skills{
                     
                     .skills-block{
                         width: 20em;
+                        .skills-progress{
+                            width: 10em;
+                        }
                     }
                 }
             }
             .project-gallery{
+                .filters{
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 0;
+                    .filter-button{
+                        margin-top: 1em;
+                    }
+                }
                 .card{
                     .project-card{
                         height: 10em;

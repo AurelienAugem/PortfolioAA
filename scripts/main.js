@@ -14,17 +14,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function backgroundParallax() {
         let scrollPos = window.scrollY;
-        cercle.style.top = 320 + scrollPos*0.6 + 'px';
+        cercle.style.top = 320 + scrollPos*0.3 + 'px';
+    }
+
+    function animationParallax(){
+        requestAnimationFrame(backgroundParallax);
     }
 
     window.addEventListener('scroll', backgroundParallax);
 
+    /***************** Animation des sections *******************/
+    let sectionSkills = document.querySelector('.skills');
+    let sectionProject = document.querySelector('.project-gallery');
+
+    const sectionObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("animate-section");
+                entry.target.classList.remove("opacity-none");
+            }
+        });
+    }, {threshold: 0.5});
+
+    sectionObserver.observe(sectionSkills);
+    sectionObserver.observe(sectionProject);
+
     /***************** Barre de progression des compétences *******************/
     let html = 90;
     let css = 90;
-    let javascript = 75;
-    let php = 70;
-    let wordpress = 60;
+    let javascript = 80;
+    let php = 75;
+    let wordpress = 80;
 
     function colorSelection(value) {
         let color;
@@ -94,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         homeImage.height = 48;
                         homeImage.src = themePath + '/assets/images/home.svg';
                         link.appendChild(homeImage);
+                        link.classList.add('home-button');
                         break;
                     case "Contact":
                         link.innerHTML = "";
@@ -103,6 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         contactImage.height = 48;
                         contactImage.src = themePath + '/assets/images/mail.svg';
                         link.appendChild(contactImage);
+                        link.classList.add('contact-button');
                         break;
 
                     default:
@@ -118,10 +140,12 @@ document.addEventListener("DOMContentLoaded", () => {
                         case themePath + '/assets/images/home.svg':
                             image.remove();
                             link.innerHTML = "Accueil";
+                            link.classList.remove('home-button');
                             break;
                         case themePath + '/assets/images/mail.svg' :
                             image.remove();
                             link.innerHTML = "Contact";
+                            link.classList.remove('contact-button');
                             break;
 
                         default:
@@ -139,7 +163,31 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('resize', resizingWindow);
 
     window.addEventListener('load', mainMenuResponsive);
+    //Bouton du menu enfoncé à l'appuie
+    /*
+    function pushButton(btn) {
+        let button = btn.querySelector('.menu-btn');
+        button.style.backgroundColor = "#1d1d1d";
+        button.style.boxShadow = "inset 7px 7px 14px #0f0f0f";
+        button.style.boxShadow = "inset -7px -7px 14px #2b2b2b";
+    }
     
+    let homeButton = document.querySelector('.home-button');
+    let contactButton = document.querySelector('.contact-button');
+
+    if (homeButton !== null && contactButton !== null) {
+        homeButton.addEventListener('click', function () {
+            pushButton(homeButton);
+        });
+        contactButton.addEventListener('click', function () {
+            pushButton(contactButton);
+        });
+    }
+    */
+
+    
+
+
 });
 
 
