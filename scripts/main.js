@@ -163,30 +163,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('resize', resizingWindow);
 
     window.addEventListener('load', mainMenuResponsive);
-    //Bouton du menu enfoncé à l'appuie
-    /*
-    function pushButton(btn) {
-        let button = btn.querySelector('.menu-btn');
-        button.style.backgroundColor = "#1d1d1d";
-        button.style.boxShadow = "inset 7px 7px 14px #0f0f0f";
-        button.style.boxShadow = "inset -7px -7px 14px #2b2b2b";
-    }
-    
-    let homeButton = document.querySelector('.home-button');
-    let contactButton = document.querySelector('.contact-button');
-
-    if (homeButton !== null && contactButton !== null) {
-        homeButton.addEventListener('click', function () {
-            pushButton(homeButton);
-        });
-        contactButton.addEventListener('click', function () {
-            pushButton(contactButton);
-        });
-    }
-    */
-
-    
-
 
 });
 
