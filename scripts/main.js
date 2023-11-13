@@ -3,11 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
     /***************** Animation menu principal *******************/
     let menuLink = document.querySelectorAll('.menu ul li a');
 
-    menuLink.forEach(link => {
-        link.addEventListener("mouseover", () => {
-            link.classList.add("link-animation");
+    if (screen.width > 780) {
+        menuLink.forEach(link => {
+            link.addEventListener("mouseover", () => {
+                link.classList.add("link-animation");
+            });
         });
-    });
+    }
 
     /***************** Parallaxe élément de fond *******************/
     let cercle = document.querySelector('.sp3');
@@ -23,6 +25,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener('scroll', backgroundParallax);
 
+    /***************** Animation du texte de présentation *******************/
+    let presentation = document.querySelector('.presentation');
+    let text = "Je suis un nouveau développeur WordPress toujours à la recherche de nouvelles opportunités pour perfectionner mes compétences. Mon domaine de prédilection est l'aspect visuel et le confort d'utilisation. N'hésitez pas à me contacter.";
+
+    function typewriterEffect(sentences, index) {
+        if (index < sentences.length) {
+            setTimeout(() => {
+                if (presentation != null) {
+                    presentation.innerHTML += '<span>'+ sentences[index] +'</span>';
+                    typewriterEffect(text, index +1);
+                }
+            }, 70);
+        }
+    }
+
+    setTimeout(() => {
+        typewriterEffect(text, 0);
+    }, 500);
+
     /***************** Animation des sections *******************/
     let sectionSkills = document.querySelector('.skills');
     let sectionProject = document.querySelector('.project-gallery');
@@ -36,8 +57,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, {threshold: 0.5});
 
-    sectionObserver.observe(sectionSkills);
-    sectionObserver.observe(sectionProject);
+    try {
+        sectionObserver.observe(sectionSkills);
+        sectionObserver.observe(sectionProject);
+    } catch (error) {
+        console.log("Les sections compétences et galerie de projet ne sont pas présentes sur cette page.")
+    }
 
     /***************** Barre de progression des compétences *******************/
     let html = 90;
