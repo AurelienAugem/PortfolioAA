@@ -166,7 +166,7 @@ body{
             opacity: 0;
         }
         .separation{
-            margin: 3em 0;
+            margin: 2em 0;
             height: 2px;
             width: 90%;
             background-color: $bleu-neon;
@@ -555,11 +555,11 @@ body{
                         font-family: 'latoregular';
                         text-decoration: none;
                         color: $bleu-neon;
+                        transition: all 250ms ease-in-out;
                     }
                     &:hover{
                         a{
                             color: aliceblue;
-                            transition: all 250ms ease-in-out;
                         }
                     }
                 }

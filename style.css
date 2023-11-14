@@ -155,7 +155,7 @@ body main .opacity-none {
   opacity: 0;
 }
 body main .separation {
-  margin: 3em 0;
+  margin: 2em 0;
   height: 2px;
   width: 90%;
   background-color: #2272FF;
@@ -532,10 +532,10 @@ body main .post .post-content .git-link a {
   font-family: "latoregular";
   text-decoration: none;
   color: #2272FF;
+  transition: all 250ms ease-in-out;
 }
 body main .post .post-content .git-link:hover a {
   color: aliceblue;
-  transition: all 250ms ease-in-out;
 }
 body footer {
   width: 100%;
