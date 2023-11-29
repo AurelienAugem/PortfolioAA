@@ -13,9 +13,10 @@
         endif;
     ?>
     <?php if(is_front_page()): ?>
+        <span class="separation"></span>
+        <?php get_template_part('templates/formations') ?>
 
         <span class="separation"></span>
-
         <?php get_template_part('templates/skillscard') ?>
         
         <span class="separation"></span>

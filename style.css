@@ -252,6 +252,18 @@ body main .deep-background .sp3 {
   left: 6em;
   z-index: -1;
 }
+body main .formations {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transition: all 500ms ease-in;
+}
+body main .formations h2 {
+  align-self: center;
+}
+body main .formations p {
+  align-self: center;
+}
 body main .skills {
   display: flex;
   flex-direction: column;
@@ -538,10 +550,18 @@ body main .post .post-content .git-link:hover a {
   color: aliceblue;
 }
 body footer {
+  display: flex;
   width: 100%;
   height: 90px;
   background: linear-gradient(#1D1D1D, 70%, #2272FF);
   opacity: 0.5;
+}
+body footer p {
+  position: absolute;
+  right: 1em;
+  font-size: 15px;
+  color: aliceblue;
+  align-self: center;
 }
 
 /****************** Responsive *********************/
@@ -582,6 +602,9 @@ body footer {
   body main .pf-page-content .presentation {
     width: 20em;
     font-size: 1em;
+  }
+  body main .formations h2 {
+    font-size: 1.2em;
   }
   body main .skills {
     width: 20em;

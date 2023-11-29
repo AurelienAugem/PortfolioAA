@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /***************** Animation des sections *******************/
     let sectionSkills = document.querySelector('.skills');
     let sectionProject = document.querySelector('.project-gallery');
+    let sectionFormations = document.querySelector('.formations');
 
     const sectionObserver = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
@@ -60,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
         sectionObserver.observe(sectionSkills);
         sectionObserver.observe(sectionProject);
+        sectionObserver.observe(sectionFormations);
     } catch (error) {
         console.log("Les sections compétences et galerie de projet ne sont pas présentes sur cette page.")
     }
